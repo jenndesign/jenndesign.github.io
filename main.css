@@ -32,9 +32,10 @@ img,
 iframe {
   display: block;
 }
+/* 영역 공통 */
 .center {
   width: 1200px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 a {
   color: #fff;
@@ -80,15 +81,15 @@ header {
 }
 .section-title {
   font-family: 'Alumni Sans Collegiate One', sans-serif;
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 80px;
+  font-size: 10rem;
+  font-weight: 400;
+  letter-spacing: 1px; /* 자간 */
   text-align: center;
 }
 .section-sub-title {
   font-family: 'Aboreto', system-ui;
   font-size: 3rem;
-  margin: 80px 0 100px 0;
+
   text-align: center;
 }
 
@@ -106,8 +107,8 @@ header {
   height: 100%;
   object-fit: cover;
 }
-
-#profile {
+/* about */
+#about {
   margin-top: 80px;
 }
 .about-inner {
@@ -119,15 +120,19 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
+  width: 500px;
+  height: 500px;
   flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  background-color: aqua;
 }
 .ab-img-wrap > img {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
   /* 사진을 원형으로 만들기 위한 코드, 사각형으로 하려면 삭제 */
-  border-radius: 50%;
 }
 .ab-text-wrap {
   display: flex;
@@ -138,7 +143,28 @@ header {
 .ab-text-wrap > h4 {
   font-size: 3.6rem;
   font-weight: 700;
+  margin-bottom: 20px;
 }
+.ab-text-wrap div {
+  margin-bottom: 20px;
+}
+
+.skill-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-list li {
+  display: flex;
+  flex-direction: column; /* 플렉스 세로 방향 */
+  align-items: center; /* 세로 가운데 정렬 */
+}
+
+.skill-list li img {
+  width: 50px;
+  border-radius: 50%;
+}
+
 .ab-text-wrap h5 {
   font-size: 2rem;
   font-weight: 500;
@@ -148,6 +174,9 @@ header {
 }
 
 /* work */
+#work {
+  margin-top: 80px;
+}
 .card-thumbnail > img {
   width: 100%;
 }
@@ -565,7 +594,8 @@ button {
 
 /* contact-pc */
 #contact {
-  margin: 160px 0px;
+  position: relative;
+  margin: 160px auto 0 auto;
 }
 #contact .contact-list {
   display: flex;
@@ -577,6 +607,15 @@ button {
 #contact .contact-list > li > a {
   display: flex;
   gap: 10px;
+}
+
+#contact .bottom-img-wrap {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#contact .bottom-img-wrap img {
+  width: 100%;
 }
 
 /* footer */
