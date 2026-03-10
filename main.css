@@ -621,11 +621,19 @@ button {
   width: 60%;
 }
 
+#contact .Closing {
+  font-family: 'Abel', sans-serif;
+  font-size: 4rem;
+  font-weight: 200;
+  letter-spacing: 5px; /* 자간 */
+  text-align: center;
+}
+
 /* footer */
 footer {
   font-family: 'Abel', sans-serif;
   text-align: center;
-  padding: 25px;
+  padding: 15px;
   background-color: #000;
   font-size: 2rem;
 }
