@@ -83,7 +83,7 @@ header {
   font-family: 'Alumni Sans Collegiate One', sans-serif;
   font-size: 10rem;
   font-weight: 400;
-  letter-spacing: 1px; /* 자간 */
+  letter-spacing: 2px; /* 자간 */
   text-align: center;
 }
 .section-sub-title {
@@ -767,7 +767,7 @@ footer {
     margin: 100px 0px;
   }
   footer {
-    padding-bottom: 40px;
+    padding-bottom: 25px;
   }
 } /* tablet End */
 
