@@ -114,25 +114,18 @@ header {
 .about-inner {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 .ab-img-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 500px;
-  height: 500px;
-  flex-shrink: 0;
+  /* 프로필 사진 크기 조절 */
+  width: 600px;
+  aspect-ratio: 1/1;
   overflow: hidden;
-  position: relative;
   border-radius: 50%;
-  background-color: aqua;
 }
 .ab-img-wrap > img {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  /* 사진을 원형으로 만들기 위한 코드, 사각형으로 하려면 삭제 */
 }
 .ab-text-wrap {
   display: flex;
@@ -330,132 +323,6 @@ button {
   cursor: pointer;
 }
 
-/* img-slider */
-.img-slider-wrap {
-  width: 60%;
-  display: flex;
-  gap: 30px;
-  margin: 0 auto;
-  margin-bottom: 150px;
-}
-.img-slider {
-  width: 400px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: 8px;
-}
-
-.img-slider-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.img-description {
-  width: 400px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.img-description > h6 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-.img-description > ul > li {
-  margin: 15px 0;
-}
-.img-description > ul > li > p {
-  font-size: 1.75rem;
-}
-
-/* page */
-.page {
-  min-width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.page img {
-  width: 100%;
-  display: block;
-}
-
-.caption {
-  padding: 15px;
-  font-size: 1.4rem;
-  font-weight: 500;
-}
-
-/* 좌우 네비게이션 버튼 공통 스타일 */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #f5daee;
-  border: none;
-  border-radius: 50%;
-
-  /* 크기 고정 */
-  width: 30px !important;
-  height: 30px !important;
-  min-width: 30px;
-
-  cursor: pointer;
-  z-index: 10;
-
-  display: flex;
-  align-items: center; /* 수직 중앙 */
-  justify-content: center; /* 수평 중앙 */
-
-  padding: 0;
-  margin: 0;
-  color: #f5daee;
-  flex-shrink: 0; /* 버튼이 찌그러지는 것 방지 */
-}
-.slider-btn > img {
-  width: 40%;
-}
-/* 각 버튼의 가로 위치 */
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-/* 버튼이 숨겨질 때 사용할 클래스 */
-.hidden {
-  opacity: 0;
-  pointer-events: none; /* 클릭 안되게 설정 */
-}
-
-.img-indicator {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  padding: 0;
-  z-index: 10;
-}
-
-.img-indicator .dot {
-  width: 6px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.img-indicator .dot.active {
-  background: #fff;
-}
-
 /* shorts-pc */
 .short {
   margin-top: 80px;
@@ -609,6 +476,7 @@ button {
   gap: 10px;
 }
 
+/* 고양이 이미지 */
 #contact .bottom-img-wrap {
   width: 30%;
   margin: 0 auto;
@@ -621,7 +489,7 @@ button {
   width: 60%;
 }
 
-#contact .Closing {
+#contact .closing {
   font-family: 'Abel', sans-serif;
   font-size: 4rem;
   font-weight: 200;
@@ -667,9 +535,8 @@ footer {
     padding: 10px 0px;
   }
   .section-title {
-    font-size: 3.6rem;
-    font-weight: 700;
-    margin-bottom: 40px;
+    font-size: 7rem;
+    letter-spacing: 1px; /* 자간 */
   }
   .section-sub-title {
     font-family: 'Aboreto', system-ui;
@@ -712,21 +579,12 @@ footer {
     width: 100%;
   }
   .card-detail {
-    padding: 20px 0px;
+    padding: 20px 30px;
   }
   .card-detail > ul {
     margin: 20px 0px;
   }
-  /* img-slider */
-  .img-slider-wrap {
-    width: 680px;
-  }
-  .img-description > ul > li {
-    margin: 10px 0;
-  }
-  .img-description > ul > li > p {
-    font-size: 1.65rem;
-  }
+
   /* shorts-tablet */
   /* 1. 기본 레이아웃 조정 */
   .short {
@@ -772,7 +630,7 @@ footer {
   }
   /* contact-tablet */
   #contact {
-    margin: 100px 0px;
+    /* margin: 100px 0px; */
   }
   footer {
     padding-bottom: 25px;
@@ -800,8 +658,9 @@ footer {
     top: 46px; /* 본인의 헤더 높이만큼 설정 */
   }
   .section-title {
-    font-size: 2.6rem;
-    font-weight: 600;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 0;
     margin-bottom: 20px;
   }
   .section-sub-title {
@@ -816,17 +675,17 @@ footer {
   }
   .about-inner {
     display: block;
-    width: 80%;
+    width: 90%;
   }
   .ab-img-wrap {
-    width: 70%;
+    width: 100%;
     margin: 0px auto;
   }
   .ab-img-wrap > img {
     width: 100%;
   }
   .ab-text-wrap {
-    width: 80%;
+    width: 100%;
     padding-left: 0;
     margin: 28px auto 0 auto;
   }
@@ -860,9 +719,22 @@ footer {
     margin-bottom: 0px;
   }
 
+  .skill-list {
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  /* 스킬 아이콘 크기 조절 */
+  .skill-list li img {
+    width: 40px;
+    border-radius: 50%;
+  }
+
   /* slider-mobile */
   .slider-container {
-    height: 550px;
+    height: 700px;
+    margin-bottom: 100px;
   }
   .card-thumbnail > img {
     width: 100%;
@@ -887,37 +759,6 @@ footer {
   /* 오른쪽 카드 */
   .card.next-card {
     transform: translateX(200px) scale(0.8);
-  }
-
-  /* img slider-mobile */
-  .img-slider-wrap {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 80px;
-  }
-  .img-slider {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    background: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
-  }
-  .slider-btn {
-    display: none;
-  }
-  .img-description {
-    width: 300px;
-    text-align: left;
-  }
-  .img-description ul li {
-    margin: 10px 0;
-  }
-  .img-description ul li p {
-    font-size: 1.6rem;
   }
 
   /* shorts-mobile */
@@ -970,14 +811,34 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px 0px;
+    /* margin: 50px 0px; */
   }
   #contact .contact-list {
     display: block;
-    padding: 20px 0;
+    padding: 30px 0;
   }
   #contact .contact-list li {
     padding: 5px 0;
+  }
+
+  /* 고양이 tablet */
+  #contact .bottom-img-wrap {
+    /* 고양이 크기 */
+    width: 70%;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #contact .bottom-img-wrap img {
+    width: 60%;
+  }
+  /* 클로징 */
+  #contact .closing {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 5px; /* 자간 */
   }
   footer {
     padding: 16px;
